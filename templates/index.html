@@ -1,0 +1,258 @@
+<html>
+
+
+<head>
+  <title>SCAV Checklist</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">  
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="apple-touch-icon" href="../static/imgs/apple-touch-icon.png">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.debug.js"></script>
+
+  <link rel="stylesheet" href="../static/css/signature-pad.css?v=10">
+
+  <link rel="stylesheet" href="../static/css/index.css?v=2">
+</head>
+
+<body  onselectstart="return false">
+
+  <div style="position:fixed; top:0px; z-index:2000; width:100%; background: white;">
+    <center>
+      <a href="/"><img src="../static/imgs/logo.png" alt="South Central AV Checklist"></a>
+    </center>
+  </div>
+
+  <form class="form-horizontal" style="padding-top: 100px;padding-left:20px;padding-right:20px;">
+    <fieldset>
+
+      <h3><center></center></h3>
+      <hr>
+
+      <!-- Client-->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="client">Client</label>  
+        <div class="col-md-4">
+        <input id="client" name="client" type="text" placeholder="" class="form-control input-md">
+          
+        </div>
+      </div>
+
+      <!-- Work Order-->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="workordernumber">Work Order #</label>  
+        <div class="col-md-4">
+        <input id="workordernumber" name="workordernumber" type="text" placeholder="" class="form-control input-md">
+          
+        </div>
+      </div>
+
+      <!-- Tech-->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="technician">Technician</label>  
+        <div class="col-md-4">
+        <input id="technician" name="technician" type="text" placeholder="" class="form-control input-md">
+          
+        </div>
+      </div>
+
+      <!-- Date-->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="date">Date</label>  
+        <div class="col-md-4">
+        <input id="date" name="date" type="date" placeholder="" class="form-control input-md">
+          
+        </div>
+      </div>
+
+      <hr>
+      <br>
+
+      <!-- Technician Checkboxes -->
+      <div class="form-group">
+        <center><h3 class="col-md-4 control-label" for="checkboxes-tech">Technician Checklist</h3></center>
+        <h6 style="margin-left:40px;width:80%"><center>Check all that apply.  Mention anything that does apply, but was unable to be completed, in the comments.</center></h6>
+        <div class="col-md-4">
+          <div class="checkbox">
+            <label for="checkboxes-tech-0">
+              <input type="checkbox" name="checkboxes-tech" id="checkboxes-tech-0" value="0">
+              All devices and cabling installed in a neat and professional manner
+            </label>
+        	</div>
+
+          <div class="checkbox">
+            <label for="checkboxes-tech-1">
+              <input type="checkbox" name="checkboxes-tech" id="checkboxes-tech-1" value="1">
+              Head End easily accessible to client
+            </label>
+        	</div>
+
+          <div style="margin-left:30px;padding-top:5px;padding-bottom:8px;">
+            Location: <input id="headend-location" style="width:96%">
+          </div>
+
+          <div class="checkbox">
+            <label for="checkboxes-tech-2">
+              <input type="checkbox" name="checkboxes-tech" id="checkboxes-tech-2" value="">
+              All controls labeled
+            </label>
+        	</div>
+          <div class="checkbox">
+            <label for="checkboxes-tech-3">
+              <input type="checkbox" name="checkboxes-tech" id="checkboxes-tech-3" value="">
+              System balanced to optimum levels
+            </label>
+        	</div>
+          <div class="checkbox">
+            <label for="checkboxes-tech-4">
+              <input type="checkbox" name="checkboxes-tech" id="checkboxes-tech-4" value="">
+              Service Stickers affixed to equipment
+            </label>
+        	</div>
+          <div class="checkbox">
+            <label for="checkboxes-tech-5">
+              <input type="checkbox" name="checkboxes-tech" id="checkboxes-tech-5" value="">
+              Program Stickers affixed to equipment or list provided to client
+            </label>
+        	</div>
+          <div class="checkbox">
+            <label for="checkboxes-tech-6">
+              <input type="checkbox" name="checkboxes-tech" id="checkboxes-tech-6" value="">
+              Client provided with Welcome Kit
+            </label>
+        	</div>
+          <div class="checkbox">
+            <label for="checkboxes-tech-7">
+              <input type="checkbox" name="checkboxes-tech" id="checkboxes-tech-7" value="">
+              Client trained on system functions and operations of equipment
+            </label>
+        	</div>
+          <div class="checkbox">
+            <label for="checkboxes-tech-8">
+              <input type="checkbox" name="checkboxes-tech" id="checkboxes-tech-8" value="">
+              Client's premises cleaned after work completed
+            </label>
+        	</div>
+          <div class="checkbox">
+            <label for="checkboxes-tech-9">
+              <input type="checkbox" name="checkboxes-tech" id="checkboxes-tech-9" value="">
+              Serial numbers of equipment and all hours shown on work order
+            </label>
+        	</div>
+          <div class="checkbox">
+            <label for="checkboxes-tech-10">
+              <input type="checkbox" name="checkboxes-tech" id="checkboxes-tech-10" value="">
+              Satellite Signal Strength: <input id="signal-strength" style="width:50px;">
+            </label>
+        	</div>
+
+        </div>
+      </div>
+
+      <!-- Tech Comments -->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="tech-comments">Technician Comments</label>
+        <div class="col-md-4">                     
+          <textarea class="form-control" id="tech-comments" name="tech-comments"></textarea>
+        </div>
+      </div>
+
+      <hr>
+      <br>
+
+      <!-- Client Checkboxes -->
+      <div class="form-group">
+        <center><h3 class="col-md-4 control-label" for="checkboxes-client">Client Checklist</h3></center>
+        <h5 style="margin-left:40px;width:80%"><center>Please check all that apply.</center></h5>
+        <div class="col-md-4">
+        <div class="checkbox">
+          <label for="checkboxes-client-0">
+            <input type="checkbox" name="checkboxes-client" id="checkboxes-client-0" value="0">
+            Did the installation meet your expectations?
+          </label>
+      	</div>
+        <div class="checkbox">
+          <label for="checkboxes-client-1">
+            <input type="checkbox" name="checkboxes-client" id="checkboxes-client-1" value="1">
+            Does the system provided, meet your expectations?
+          </label>
+      	</div>
+        <div class="checkbox">
+          <label for="checkboxes-client-2">
+            <input type="checkbox" name="checkboxes-client" id="checkboxes-client-2" value="">
+            Do you require any additional training on the system?
+          </label>
+      	</div>
+
+        <div class="checkbox">
+          <label for="checkboxes-client-4">
+            <input type="checkbox" name="checkboxes-client" id="checkboxes-client-4" value="">
+            Would you like your Account Manager to follow up with you?
+          </label>
+      	</div>
+        </div>
+      </div>
+
+      <!-- Client Comments -->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="client-comments">Client Comments</label>
+        <div class="col-md-4">                     
+          <textarea class="form-control" id="client-comments" name="client-comments"></textarea>
+        </div>
+      </div>
+
+      <!-- Client Name-->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="client-name">Client Name</label>  
+        <div class="col-md-4">
+        <input id="client-name" name="client-name" type="text" placeholder="" class="form-control input-md">
+          
+        </div>
+      </div>
+
+
+      <label>Client Signature</label>
+      <div id="signthumbnail" style="display:none"></div>
+      <div id="signature-pad" class="signature-pad">
+        <div class="signature-pad--body">
+          <canvas></canvas>
+        </div>
+        <div class="signature-pad--footer">
+          <div class="description">Sign above</div>
+
+          <div class="signature-pad--actions">
+            <div>
+              <button type="button" class="button clear" data-action="clear">Clear</button>
+            </div>
+            <div>
+              <button type="button" class="button save" data-action="save-png">Confirm Signature</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <hr>
+      <br>
+
+      <button onclick="return save()">Save</button>
+
+    </fieldset>
+  </form>
+
+  <script src="../static/js/signature_pad.js"></script>
+  <script src="../static/js/index.js"></script>
+
+</body>
+</html>
